@@ -1,0 +1,41 @@
+{
+  "name": "test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index.mjs",
+  "type": "module",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@spectera/framework": "^0.0.3-next.f0eafed.0",
+    "discord-api-types": "^0.37.65"
+  },
+  "devDependencies": {
+    "@sapphire/eslint-config": "^5.0.3",
+    "@sapphire/prettier-config": "^2.0.0",
+    "@sapphire/ts-config": "^5.0.0",
+    "@types/node": "^20.10.3",
+    "dotenv": "^16.3.1",
+    "eslint": "^8.55.0",
+    "ngrok": "^5.0.0-beta.2",
+    "prettier": "^3.1.0",
+    "tsup": "^8.0.1",
+    "wrangler": "^3.18.0"
+  },
+  "scripts": {
+    "sapphire": "sapphire",
+    "generate": "sapphire generate",
+    "build": "tsup",
+    "watch": "tsup --watch",
+    "start": "node dist/index.mjs",
+    "typecheck": "tsc -b src",
+    "dev": "tsup --watch --onSuccess \"node --enable-source-maps ./dist/index.js\"",
+    "lint": "eslint src --ext ts --fix",
+    "format": "prettier --write \"src/**/*.ts\""
+  },
+  "eslintConfig": {
+    "extends": "@sapphire"
+  },
+  "prettier": "@sapphire/prettier-config"
+}
